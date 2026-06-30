@@ -117,4 +117,109 @@
         Đã đăng xuất khỏi hệ thống.
     </string>
 
+    <!-- Tìm kiếm sản phẩm -->
+    <string name="products_title">Sản phẩm</string>
+
+    <string name="products_subtitle">
+    Tìm kiếm và lựa chọn sản phẩm phù hợp với nhu cầu của bạn.
+</string>
+
+    <string name="product_filter_title">Tìm sản phẩm</string>
+
+    <string name="hint_search_product_name">
+    Nhập tên sản phẩm
+</string>
+
+    <string name="hint_min_price">
+    Giá từ
+</string>
+
+    <string name="hint_max_price">
+    Giá đến
+</string>
+
+    <string name="price_unit">VNĐ</string>
+
+    <string name="button_search_product">Tìm kiếm</string>
+    <string name="button_clear_filter">Xóa bộ lọc</string>
+    <string name="button_browse_products">Khám phá sản phẩm</string>
+
+    <string name="product_result_count">
+    %1$d sản phẩm
+</string>
+
+    <string name="product_empty">
+    Không tìm thấy sản phẩm phù hợp.
+</string>
+
+    <string name="product_search_error">
+    Không thể tải danh sách sản phẩm. Vui lòng thử lại.
+</string>
+
+    <string name="product_invalid_price">
+    Giá phải là một số hợp lệ.
+</string>
+
+    <string name="product_invalid_price_range">
+    Giá tối đa phải lớn hơn hoặc bằng giá tối thiểu.
+</string>
+
+    <!-- Thông tin sản phẩm -->
+    <string name="product_price_format">%1$s</string>
+
+    <string name="product_stock_format">
+    Kho: %1$d
+</string>
+
+    <string name="product_rating_format">
+    Điểm: %1$.1f/5 (%2$d)
+</string>
+
+    <string name="product_initial_fallback">S</string>
+
+    <string name="button_add_to_cart">
+    Thêm vào giỏ
+</string>
+
+    <string name="product_out_of_stock">
+    Hết hàng
+</string>
+
+    <string name="add_product_accessibility">
+    Thêm %1$s vào giỏ hàng
+</string>
+
+    <!-- Giỏ hàng -->
+    <string name="cart_summary_format">
+    Giỏ hàng: %1$d sản phẩm
+</string>
+
+    <string name="cart_insert_success">
+    Đã thêm sản phẩm vào giỏ hàng.
+</string>
+
+    <string name="cart_update_success">
+    Sản phẩm đã có trong giỏ. Số lượng hiện tại là %1$d.
+</string>
+
+    <string name="cart_out_of_stock">
+    Số lượng trong giỏ đã đạt giới hạn tồn kho.
+</string>
+
+    <string name="cart_product_unavailable">
+    Sản phẩm không còn khả dụng.
+</string>
+
+    <string name="cart_invalid_session">
+    Phiên đăng nhập không hợp lệ. Vui lòng đăng nhập lại.
+</string>
+
+    <string name="cart_update_error">
+    Không thể cập nhật giỏ hàng. Vui lòng thử lại.
+</string>
+
+    <string name="navigation_back">
+    Quay lại
+</string>
+
 </resources>

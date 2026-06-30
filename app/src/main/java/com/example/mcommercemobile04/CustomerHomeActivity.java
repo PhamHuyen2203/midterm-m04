@@ -2,6 +2,7 @@ package com.example.mcommercemobile04;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -16,6 +17,8 @@ public class CustomerHomeActivity
     private TextView textViewHomeTitle;
     private TextView textViewWelcome;
     private TextView textViewRoleDescription;
+
+    private Button buttonBrowseProducts;
     private Button buttonLogout;
 
     @Override
@@ -24,10 +27,6 @@ public class CustomerHomeActivity
     ) {
         super.onCreate(savedInstanceState);
 
-        /*
-         * Không cho mở trang khách hàng nếu chưa đăng nhập
-         * hoặc tài khoản không phải CUSTOMER.
-         */
         if (!SessionManager.isLoggedIn(this)
                 || !SessionManager.isCustomer(this)) {
 
@@ -61,10 +60,19 @@ public class CustomerHomeActivity
                         R.id.textViewRoleDescription
                 );
 
+        buttonBrowseProducts =
+                findViewById(
+                        R.id.buttonBrowseProducts
+                );
+
         buttonLogout =
                 findViewById(
                         R.id.buttonLogout
                 );
+
+        buttonBrowseProducts.setVisibility(
+                View.VISIBLE
+        );
     }
 
     private void displayCustomerInformation() {
@@ -87,9 +95,24 @@ public class CustomerHomeActivity
 
     private void setEvents() {
 
+        buttonBrowseProducts.setOnClickListener(
+                view -> openProductScreen()
+        );
+
         buttonLogout.setOnClickListener(
                 view -> logout()
         );
+    }
+
+    private void openProductScreen() {
+
+        Intent intent =
+                new Intent(
+                        this,
+                        ProductSearchActivity.class
+                );
+
+        startActivity(intent);
     }
 
     private void logout() {

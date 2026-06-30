@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootProductSearch"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/mc_background"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbarProducts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="@dimen/mc_toolbar_height"
+        android:background="@color/mc_surface"
+        app:navigationIcon="@drawable/ic_arrow_back_24"
+        app:title="@string/products_title"
+        app:titleTextColor="@color/mc_text_primary" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/mc_screen_padding"
+        android:layout_marginTop="@dimen/mc_spacing_sm"
+        android:layout_marginEnd="@dimen/mc_screen_padding"
+        android:text="@string/products_subtitle"
+        android:textColor="@color/mc_text_secondary"
+        android:textSize="@dimen/mc_text_body" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/mc_screen_padding"
+        android:layout_marginTop="@dimen/mc_spacing_md"
+        android:layout_marginEnd="@dimen/mc_screen_padding"
+        app:cardBackgroundColor="@color/mc_surface"
+        app:cardCornerRadius="@dimen/mc_corner_radius"
+        app:cardElevation="@dimen/mc_card_elevation"
+        app:strokeColor="@color/mc_border"
+        app:strokeWidth="@dimen/mc_stroke_width">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/mc_card_padding">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/product_filter_title"
+                android:textColor="@color/mc_text_primary"
+                android:textSize="@dimen/mc_text_heading"
+                android:textStyle="bold" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayoutProductName"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/mc_spacing_md"
+                android:hint="@string/hint_search_product_name">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextProductName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textColor="@color/mc_text_primary"
+                    android:textSize="@dimen/mc_text_body" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/mc_spacing_md"
+                android:orientation="horizontal">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutMinPrice"
+                    style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="@string/hint_min_price"
+                    app:suffixText="@string/price_unit">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editTextMinPrice"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="actionNext"
+                        android:inputType="number"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:textColor="@color/mc_text_primary"
+                        android:textSize="@dimen/mc_text_body" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutMaxPrice"
+                    style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/mc_spacing_sm"
+                    android:layout_weight="1"
+                    android:hint="@string/hint_max_price"
+                    app:suffixText="@string/price_unit">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editTextMaxPrice"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="actionSearch"
+                        android:inputType="number"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:textColor="@color/mc_text_primary"
+                        android:textSize="@dimen/mc_text_body" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/mc_spacing_md"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/buttonClearProductFilter"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:minHeight="@dimen/mc_button_height"
+                    android:text="@string/button_clear_filter"
+                    android:textColor="@color/mc_primary"
+                    app:cornerRadius="@dimen/mc_corner_radius"
+                    app:strokeColor="@color/mc_primary" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/buttonSearchProduct"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/mc_spacing_sm"
+                    android:layout_weight="1"
+                    android:minHeight="@dimen/mc_button_height"
+                    android:text="@string/button_search_product"
+                    android:textColor="@color/mc_text_on_primary"
+                    app:backgroundTint="@color/mc_primary"
+                    app:cornerRadius="@dimen/mc_corner_radius" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/mc_screen_padding"
+        android:layout_marginTop="@dimen/mc_spacing_md"
+        android:layout_marginEnd="@dimen/mc_screen_padding"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textViewProductResultCount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/mc_text_primary"
+            android:textSize="@dimen/mc_text_body"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textViewCartSummary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/mc_primary"
+            android:textSize="@dimen/mc_text_caption"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/mc_spacing_sm"
+        android:layout_weight="1">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewProducts"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingTop="@dimen/mc_spacing_sm"
+            android:paddingBottom="@dimen/mc_spacing_lg" />
+
+        <ProgressBar
+            android:id="@+id/progressBarProducts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:indeterminateTint="@color/mc_primary"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/textViewEmptyProducts"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:padding="@dimen/mc_screen_padding"
+            android:text="@string/product_empty"
+            android:textColor="@color/mc_text_secondary"
+            android:textSize="@dimen/mc_text_body"
+            android:visibility="gone" />
+
+    </FrameLayout>
+
+</LinearLayout>

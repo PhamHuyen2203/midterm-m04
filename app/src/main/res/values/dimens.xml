@@ -34,4 +34,10 @@
 
     <dimen name="mc_content_max_width">520dp</dimen>
 
+    <dimen name="mc_toolbar_height">64dp</dimen>
+    <dimen name="mc_icon_size">24dp</dimen>
+    <dimen name="mc_product_initial_size">64dp</dimen>
+    <dimen name="mc_product_initial_text">24sp</dimen>
+    <dimen name="mc_product_item_padding">16dp</dimen>
+
 </resources>

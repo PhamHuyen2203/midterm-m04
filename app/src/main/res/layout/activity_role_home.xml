@@ -108,6 +108,20 @@
         </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonBrowseProducts"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/mc_spacing_lg"
+            android:minHeight="@dimen/mc_button_height"
+            android:text="@string/button_browse_products"
+            android:textColor="@color/mc_text_on_primary"
+            android:textSize="@dimen/mc_text_body"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:backgroundTint="@color/mc_primary"
+            app:cornerRadius="@dimen/mc_corner_radius" />
+
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/buttonLogout"
             style="@style/Widget.Material3.Button.OutlinedButton"
             android:layout_width="match_parent"

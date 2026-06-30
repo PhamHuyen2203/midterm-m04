@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MCommerceMobile04">
         <activity
+            android:name=".ProductSearchActivity"
+            android:exported="false" />
+        <activity
             android:name=".AdminHomeActivity"
             android:exported="false" />
         <activity

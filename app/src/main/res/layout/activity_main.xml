@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/color_background"
+    android:background="@color/mc_background"
     android:fillViewport="true"
     tools:context=".MainActivity">
 
@@ -12,65 +12,65 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="@dimen/screen_padding">
+        android:padding="@dimen/mc_screen_padding">
 
         <TextView
             android:id="@+id/textViewAppName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/app_name"
-            android:textColor="@color/color_primary"
-            android:textSize="@dimen/text_size_title"
+            android:textColor="@color/mc_primary"
+            android:textSize="@dimen/mc_text_title"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/textViewQuestionTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/spacing_medium"
-            android:text="@string/question_1_title"
-            android:textColor="@color/color_text_primary"
-            android:textSize="@dimen/text_size_subtitle"
+            android:layout_marginTop="@dimen/mc_spacing_md"
+            android:text="@string/q1_title"
+            android:textColor="@color/mc_text_primary"
+            android:textSize="@dimen/mc_text_heading"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/textViewDescription"
+            android:id="@+id/textViewQuestionDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/spacing_small"
-            android:lineSpacingExtra="@dimen/spacing_extra_small"
-            android:text="@string/question_1_description"
-            android:textColor="@color/color_text_secondary"
-            android:textSize="@dimen/text_size_body" />
+            android:layout_marginTop="@dimen/mc_spacing_sm"
+            android:lineSpacingExtra="@dimen/mc_spacing_xs"
+            android:text="@string/q1_description"
+            android:textColor="@color/mc_text_secondary"
+            android:textSize="@dimen/mc_text_body" />
 
         <TextView
-            android:id="@+id/textViewStatusTitle"
+            android:id="@+id/textViewDatabaseStatusHeading"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/spacing_large"
-            android:text="@string/database_status_title"
-            android:textColor="@color/color_text_primary"
-            android:textSize="@dimen/text_size_subtitle"
+            android:layout_marginTop="@dimen/mc_spacing_lg"
+            android:text="@string/database_status_heading"
+            android:textColor="@color/mc_text_primary"
+            android:textSize="@dimen/mc_text_heading"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/textViewDatabaseStatus"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/spacing_small"
+            android:layout_marginTop="@dimen/mc_spacing_sm"
             android:text="@string/database_status_not_checked"
-            android:textColor="@color/color_text_secondary"
-            android:textSize="@dimen/text_size_body" />
+            android:textColor="@color/mc_text_secondary"
+            android:textSize="@dimen/mc_text_body" />
 
         <Button
             android:id="@+id/buttonCheckDatabase"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/spacing_large"
-            android:minHeight="@dimen/button_min_height"
-            android:backgroundTint="@color/color_primary"
+            android:layout_marginTop="@dimen/mc_spacing_lg"
+            android:minHeight="@dimen/mc_button_height"
+            android:backgroundTint="@color/mc_primary"
             android:text="@string/button_check_database"
-            android:textColor="@color/color_text_on_primary" />
+            android:textColor="@color/mc_text_on_primary" />
 
     </LinearLayout>
 

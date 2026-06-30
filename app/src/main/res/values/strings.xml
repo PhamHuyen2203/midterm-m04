@@ -1,23 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- Tên ứng dụng -->
-    <string name="app_name">M-Commerce Mobile</string>
+    <string name="app_name">M-Commerce Mobile 04</string>
 
     <!-- Câu 1 -->
-    <string name="question_1_title">Câu 1 - Thiết kế cơ sở dữ liệu SQLite</string>
-    <string name="question_1_description">
+    <string name="q1_title">Câu 1 - Thiết kế cơ sở dữ liệu SQLite</string>
+
+    <string name="q1_description">
         Cơ sở dữ liệu thương mại điện tử gồm người dùng, danh mục,
         sản phẩm, giỏ hàng, đơn hàng, thanh toán và đánh giá sản phẩm.
     </string>
 
     <!-- Kiểm tra database -->
-    <string name="database_status_title">Trạng thái cơ sở dữ liệu</string>
+    <string name="database_status_heading">Trạng thái cơ sở dữ liệu</string>
     <string name="database_status_not_checked">Chưa kiểm tra cơ sở dữ liệu.</string>
     <string name="button_check_database">Kiểm tra cơ sở dữ liệu</string>
 
     <string name="database_check_success">
-        Kết nối thành công. Tìm thấy %1$d bảng nghiệp vụ.
+        Kết nối thành công. Tìm thấy đủ %1$d bảng nghiệp vụ.
+    </string>
+
+    <string name="database_table_missing">
+        Cơ sở dữ liệu chưa đủ bảng. Hiện có %1$d/%2$d bảng.
+    </string>
+
+    <string name="database_foreign_key_error">
+        Cơ sở dữ liệu có dữ liệu vi phạm khóa ngoại.
     </string>
 
     <string name="database_check_failed">

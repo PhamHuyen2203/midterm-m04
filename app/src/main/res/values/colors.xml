@@ -2,26 +2,26 @@
 <resources>
 
     <!-- Màu thương hiệu -->
-    <color name="color_primary">#1565C0</color>
-    <color name="color_primary_dark">#0D47A1</color>
-    <color name="color_secondary">#FF8F00</color>
+    <color name="mc_primary">#1565C0</color>
+    <color name="mc_primary_dark">#0D47A1</color>
+    <color name="mc_secondary">#FF8F00</color>
 
     <!-- Màu nền -->
-    <color name="color_background">#F5F7FA</color>
-    <color name="color_surface">#FFFFFF</color>
+    <color name="mc_background">#F5F7FA</color>
+    <color name="mc_surface">#FFFFFF</color>
 
     <!-- Màu chữ -->
-    <color name="color_text_primary">#1F2937</color>
-    <color name="color_text_secondary">#6B7280</color>
-    <color name="color_text_on_primary">#FFFFFF</color>
+    <color name="mc_text_primary">#1F2937</color>
+    <color name="mc_text_secondary">#6B7280</color>
+    <color name="mc_text_on_primary">#FFFFFF</color>
 
     <!-- Màu trạng thái -->
-    <color name="color_success">#2E7D32</color>
-    <color name="color_warning">#EF6C00</color>
-    <color name="color_error">#C62828</color>
+    <color name="mc_success">#2E7D32</color>
+    <color name="mc_warning">#EF6C00</color>
+    <color name="mc_error">#C62828</color>
 
-    <!-- Màu phụ trợ -->
-    <color name="color_divider">#E5E7EB</color>
-    <color name="color_disabled">#BDBDBD</color>
+    <!-- Màu phụ -->
+    <color name="mc_divider">#E5E7EB</color>
+    <color name="mc_disabled">#BDBDBD</color>
 
 </resources>

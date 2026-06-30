@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -12,75 +13,123 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="@dimen/mc_screen_padding">
+        android:paddingStart="@dimen/mc_screen_padding"
+        android:paddingTop="@dimen/mc_spacing_lg"
+        android:paddingEnd="@dimen/mc_screen_padding"
+        android:paddingBottom="@dimen/mc_spacing_xl">
 
-        <TextView
-            android:id="@+id/textViewAppName"
+        <!-- Khu vực thương hiệu -->
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/app_name"
-            android:textColor="@color/mc_primary"
-            android:textSize="@dimen/mc_text_title"
-            android:textStyle="bold" />
+            app:cardBackgroundColor="@color/mc_primary"
+            app:cardCornerRadius="@dimen/mc_card_radius_large"
+            app:cardElevation="@dimen/mc_card_elevation">
 
-        <TextView
-            android:id="@+id/textViewQuestionTitle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/mc_spacing_md"
-            android:text="@string/q1_title"
-            android:textColor="@color/mc_text_primary"
-            android:textSize="@dimen/mc_text_heading"
-            android:textStyle="bold" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/mc_card_padding">
 
-        <TextView
-            android:id="@+id/textViewQuestionDescription"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/mc_spacing_sm"
-            android:lineSpacingExtra="@dimen/mc_spacing_xs"
-            android:text="@string/q1_description"
-            android:textColor="@color/mc_text_secondary"
-            android:textSize="@dimen/mc_text_body" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/mc_spacing_md"
+                    android:text="@string/app_name"
+                    android:textColor="@color/mc_text_on_primary"
+                    android:textSize="@dimen/mc_text_display"
+                    android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/textViewDatabaseStatusHeading"
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/mc_spacing_sm"
+                    android:text="@string/welcome_title"
+                    android:textColor="@color/mc_text_on_primary"
+                    android:textSize="@dimen/mc_text_heading"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/mc_spacing_sm"
+                    android:lineSpacingExtra="@dimen/mc_spacing_xs"
+                    android:text="@string/welcome_description"
+                    android:textColor="@color/mc_text_on_primary_muted"
+                    android:textSize="@dimen/mc_text_body" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Trạng thái dữ liệu -->
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/mc_spacing_lg"
-            android:text="@string/database_status_heading"
-            android:textColor="@color/mc_text_primary"
-            android:textSize="@dimen/mc_text_heading"
-            android:textStyle="bold" />
+            app:cardBackgroundColor="@color/mc_surface"
+            app:cardCornerRadius="@dimen/mc_corner_radius"
+            app:cardElevation="@dimen/mc_card_elevation"
+            app:strokeColor="@color/mc_border"
+            app:strokeWidth="@dimen/mc_stroke_width">
 
-        <TextView
-            android:id="@+id/textViewDatabaseStatus"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/mc_spacing_sm"
-            android:text="@string/database_status_not_checked"
-            android:textColor="@color/mc_text_secondary"
-            android:textSize="@dimen/mc_text_body" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/mc_card_padding">
 
-        <Button
-            android:id="@+id/buttonCheckDatabase"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/mc_spacing_lg"
-            android:minHeight="@dimen/mc_button_height"
-            android:backgroundTint="@color/mc_primary"
-            android:text="@string/button_check_database"
-            android:textColor="@color/mc_text_on_primary" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/database_status_heading"
+                    android:textColor="@color/mc_text_primary"
+                    android:textSize="@dimen/mc_text_heading"
+                    android:textStyle="bold" />
 
-        <Button
+                <TextView
+                    android:id="@+id/textViewDatabaseStatus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/mc_spacing_sm"
+                    android:lineSpacingExtra="@dimen/mc_spacing_xs"
+                    android:text="@string/database_status_not_checked"
+                    android:textColor="@color/mc_text_secondary"
+                    android:textSize="@dimen/mc_text_body" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Nút đăng nhập chính -->
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/buttonOpenLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/mc_spacing_lg"
+            android:minHeight="@dimen/mc_button_height"
+            android:text="@string/button_open_login"
+            android:textColor="@color/mc_text_on_primary"
+            android:textSize="@dimen/mc_text_body"
+            android:textStyle="bold"
+            app:backgroundTint="@color/mc_primary"
+            app:cornerRadius="@dimen/mc_corner_radius" />
+
+        <!-- Nút kiểm tra hệ thống phụ -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonCheckDatabase"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/mc_spacing_md"
             android:minHeight="@dimen/mc_button_height"
-            android:backgroundTint="@color/mc_secondary"
-            android:text="@string/button_open_login"
-            android:textColor="@color/mc_text_on_primary" />
+            android:text="@string/button_check_database"
+            android:textColor="@color/mc_primary"
+            android:textSize="@dimen/mc_text_body"
+            app:cornerRadius="@dimen/mc_corner_radius"
+            app:strokeColor="@color/mc_primary"
+            app:strokeWidth="@dimen/mc_stroke_width" />
 
     </LinearLayout>
 

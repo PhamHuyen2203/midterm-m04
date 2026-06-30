@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!-- Khoảng cách màn hình -->
     <dimen name="mc_screen_padding">24dp</dimen>
 
     <dimen name="mc_spacing_xs">4dp</dimen>
@@ -8,16 +9,29 @@
     <dimen name="mc_spacing_md">16dp</dimen>
     <dimen name="mc_spacing_lg">24dp</dimen>
     <dimen name="mc_spacing_xl">32dp</dimen>
+    <dimen name="mc_spacing_xxl">48dp</dimen>
 
+    <!-- Kích thước chữ -->
+    <dimen name="mc_text_display">30sp</dimen>
     <dimen name="mc_text_title">24sp</dimen>
-    <dimen name="mc_text_heading">18sp</dimen>
+    <dimen name="mc_text_heading">20sp</dimen>
     <dimen name="mc_text_body">16sp</dimen>
     <dimen name="mc_text_caption">14sp</dimen>
+    <dimen name="mc_text_small">13sp</dimen>
+    <dimen name="mc_text_brand_mark">28sp</dimen>
 
-    <dimen name="mc_button_height">50dp</dimen>
-    <dimen name="mc_corner_radius">12dp</dimen>
-
+    <!-- Component -->
+    <dimen name="mc_button_height">52dp</dimen>
     <dimen name="mc_input_min_height">56dp</dimen>
+    <dimen name="mc_logo_size">72dp</dimen>
+
+    <!-- Card -->
+    <dimen name="mc_corner_radius">14dp</dimen>
+    <dimen name="mc_card_radius_large">24dp</dimen>
+    <dimen name="mc_card_padding">20dp</dimen>
+    <dimen name="mc_card_elevation">2dp</dimen>
+    <dimen name="mc_stroke_width">1dp</dimen>
+
     <dimen name="mc_content_max_width">520dp</dimen>
 
 </resources>

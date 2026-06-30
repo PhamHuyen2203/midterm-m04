@@ -1,51 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">M-Commerce Mobile 04</string>
+    <!-- Thương hiệu -->
+    <string name="app_name">MCommerce</string>
+    <string name="brand_mark">MC</string>
 
-    <!-- ================================================== -->
-    <!-- Câu 1: Thiết kế cơ sở dữ liệu SQLite -->
-    <!-- ================================================== -->
-    <string name="q1_title">Câu 1 - Thiết kế cơ sở dữ liệu SQLite</string>
+    <!-- Màn hình khởi động -->
+    <string name="welcome_title">Mua sắm dễ dàng, quản lý thông minh</string>
 
-    <string name="q1_description">
-        Cơ sở dữ liệu thương mại điện tử gồm người dùng, danh mục,
-        sản phẩm, giỏ hàng, đơn hàng, thanh toán và đánh giá sản phẩm.
+    <string name="welcome_description">
+        Khám phá sản phẩm, quản lý đơn hàng và trải nghiệm mua sắm
+        thuận tiện trong một ứng dụng duy nhất.
     </string>
 
-    <!-- Kiểm tra database -->
-    <string name="database_status_heading">Trạng thái cơ sở dữ liệu</string>
-    <string name="database_status_not_checked">Chưa kiểm tra cơ sở dữ liệu.</string>
-    <string name="button_check_database">Kiểm tra cơ sở dữ liệu</string>
+    <string name="database_status_heading">Trạng thái hệ thống</string>
+
+    <string name="database_status_not_checked">
+        Đang kiểm tra kết nối dữ liệu…
+    </string>
+
+    <string name="button_check_database">Kiểm tra lại</string>
+    <string name="button_open_login">Đăng nhập</string>
 
     <string name="database_check_success">
-        Kết nối thành công. Tìm thấy đủ %1$d bảng nghiệp vụ.
+        Hệ thống đã sẵn sàng với %1$d nhóm dữ liệu.
     </string>
 
     <string name="database_table_missing">
-        Cơ sở dữ liệu chưa đủ bảng. Hiện có %1$d/%2$d bảng.
+        Dữ liệu hệ thống chưa hoàn chỉnh. Hiện có %1$d/%2$d nhóm dữ liệu.
     </string>
 
     <string name="database_foreign_key_error">
-        Cơ sở dữ liệu có dữ liệu vi phạm khóa ngoại.
+        Phát hiện dữ liệu không hợp lệ trong hệ thống.
     </string>
 
     <string name="database_check_failed">
-        Không thể mở cơ sở dữ liệu. Hãy kiểm tra file MCommerce.sqlite trong thư mục assets.
+        Không thể kết nối dữ liệu. Vui lòng kiểm tra lại hệ thống.
     </string>
 
-    <!-- ================================================== -->
-    <!-- Câu 2: Đăng nhập và khóa tài khoản -->
-    <!-- ================================================== -->
-
-    <string name="q2_title">
-    Câu 2 - Đăng nhập và khóa tài khoản
-</string>
+    <!-- Đăng nhập -->
+    <string name="login_title">Chào mừng trở lại</string>
 
     <string name="login_description">
-    Đăng nhập bằng tài khoản khách hàng hoặc quản trị viên.
-    Tài khoản sẽ bị khóa sau 3 lần nhập sai mật khẩu liên tiếp.
-</string>
+        Đăng nhập để tiếp tục sử dụng các chức năng của MCommerce.
+    </string>
 
     <string name="label_username">Tên đăng nhập</string>
     <string name="label_password">Mật khẩu</string>
@@ -54,75 +52,69 @@
     <string name="hint_password">Nhập mật khẩu</string>
 
     <string name="button_login">Đăng nhập</string>
-    <string name="button_open_login">Đi đến màn hình đăng nhập</string>
     <string name="button_logout">Đăng xuất</string>
 
+    <string name="security_notice_title">Bảo mật tài khoản</string>
+
+    <string name="security_notice_description">
+        Tài khoản sẽ bị khóa sau 3 lần nhập sai mật khẩu liên tiếp.
+    </string>
+
+    <!-- Kiểm tra dữ liệu nhập -->
     <string name="login_username_required">
-    Vui lòng nhập tên đăng nhập.
-</string>
+        Vui lòng nhập tên đăng nhập.
+    </string>
 
     <string name="login_password_required">
-    Vui lòng nhập mật khẩu.
-</string>
+        Vui lòng nhập mật khẩu.
+    </string>
 
+    <!-- Kết quả đăng nhập -->
     <string name="login_invalid_credentials">
-    Tên đăng nhập hoặc mật khẩu không đúng.
-</string>
+        Tên đăng nhập hoặc mật khẩu không đúng.
+    </string>
 
     <string name="login_wrong_password_remaining">
-    Mật khẩu không đúng. Bạn còn %1$d lần thử.
-</string>
+        Mật khẩu không đúng. Bạn còn %1$d lần thử.
+    </string>
 
     <string name="login_account_locked">
-    Tài khoản đã bị khóa do đăng nhập sai 3 lần liên tiếp.
-</string>
+        Tài khoản đã bị khóa do đăng nhập sai 3 lần liên tiếp.
+    </string>
 
     <string name="login_database_error">
-    Không thể kiểm tra tài khoản. Vui lòng kiểm tra cơ sở dữ liệu.
-</string>
+        Không thể kiểm tra tài khoản. Vui lòng kiểm tra kết nối dữ liệu.
+    </string>
 
     <string name="login_invalid_role">
-    Tài khoản có vai trò không hợp lệ.
-</string>
+        Tài khoản không có quyền truy cập hợp lệ.
+    </string>
 
     <string name="login_success_admin">
-    Đăng nhập quản trị viên thành công. Xin chào %1$s.
-</string>
+        Đăng nhập thành công. Xin chào %1$s.
+    </string>
 
     <string name="login_success_customer">
-    Đăng nhập khách hàng thành công. Xin chào %1$s.
-</string>
+        Đăng nhập thành công. Xin chào %1$s.
+    </string>
 
-    <string name="login_test_account_heading">
-    Tài khoản kiểm thử
-</string>
+    <!-- Màn hình sau đăng nhập -->
+    <string name="admin_home_title">Bảng điều khiển quản trị</string>
+    <string name="customer_home_title">Trang mua sắm</string>
 
-    <string name="login_test_account_description">
-    Admin: admin / 123456\nKhách hàng: customer1 / 123456
-</string>
+    <string name="home_welcome">Xin chào, %1$s</string>
 
-    <string name="admin_home_title">
-    Trang quản trị
-</string>
+    <string name="home_role_admin">Quản trị viên</string>
+    <string name="home_role_customer">Khách hàng</string>
 
-    <string name="customer_home_title">
-    Trang khách hàng
-</string>
+    <string name="home_session_title">Phiên đăng nhập an toàn</string>
 
-    <string name="home_welcome">
-    Xin chào, %1$s
-</string>
-
-    <string name="home_role_admin">
-    Bạn đang đăng nhập với quyền quản trị viên.
-</string>
-
-    <string name="home_role_customer">
-    Bạn đang đăng nhập với quyền khách hàng.
-</string>
+    <string name="home_session_description">
+        Tài khoản của bạn đã được xác thực và đang hoạt động.
+    </string>
 
     <string name="logout_success">
-    Đã đăng xuất khỏi hệ thống.
-</string>
+        Đã đăng xuất khỏi hệ thống.
+    </string>
 
 </resources>

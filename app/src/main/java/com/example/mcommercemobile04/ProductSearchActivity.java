@@ -13,6 +13,8 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 
 import com.example.dals.UserDAO;
 import com.example.models.CheckoutAccessResult;
@@ -35,7 +37,7 @@ import java.util.concurrent.Executors;
 
 public class ProductSearchActivity
         extends AppCompatActivity
-        implements ProductAdapter.OnAddToCartListener {
+        implements ProductAdapter.OnProductActionListener {
 
     private static final String LOG_TAG =
             "ProductSearchActivity";
@@ -88,6 +90,28 @@ public class ProductSearchActivity
 
     private final ExecutorService executorService =
             Executors.newSingleThreadExecutor();
+
+    private final ActivityResultLauncher<Intent>
+            reviewActivityLauncher =
+
+            registerForActivityResult(
+                    new ActivityResultContracts
+                            .StartActivityForResult(),
+
+                    result -> {
+
+                        if (result.getResultCode()
+                                == RESULT_OK) {
+
+                            /*
+                             * Đánh giá đã được INSERT
+                             * và điểm trung bình đã cập nhật.
+                             * Tải lại sản phẩm để hiện điểm mới.
+                             */
+                            performSearch();
+                        }
+                    }
+            );
 
     @Override
     protected void onCreate(
@@ -483,6 +507,40 @@ public class ProductSearchActivity
                 });
             }
         });
+    }
+
+    @Override
+    public void onReviewProduct(
+            Product product
+    ) {
+
+        Intent intent =
+                new Intent(
+                        this,
+                        ReviewActivity.class
+                );
+
+        intent.putExtra(
+                ReviewActivity.EXTRA_PRODUCT_ID,
+                product.getProductId()
+        );
+
+        intent.putExtra(
+                ReviewActivity.EXTRA_PRODUCT_NAME,
+                product.getProductName()
+        );
+
+        intent.putExtra(
+                ReviewActivity.EXTRA_AVERAGE_RATING,
+                product.getAverageRating()
+        );
+
+        intent.putExtra(
+                ReviewActivity.EXTRA_RATING_COUNT,
+                product.getRatingCount()
+        );
+
+        reviewActivityLauncher.launch(intent);
     }
 
     private void handleCartResult(

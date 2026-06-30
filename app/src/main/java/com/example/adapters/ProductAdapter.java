@@ -24,20 +24,23 @@ public final class ProductAdapter
         ProductAdapter.ProductViewHolder
         > {
 
-    public interface OnAddToCartListener {
+    public interface OnProductActionListener {
 
         void onAddToCart(Product product);
+
+        void onReviewProduct(Product product);
     }
 
     private final List<Product> products =
             new ArrayList<>();
 
-    private final OnAddToCartListener listener;
+    private final OnProductActionListener listener;
 
     private final NumberFormat currencyFormatter;
 
+
     public ProductAdapter(
-            OnAddToCartListener listener
+            OnProductActionListener listener
     ) {
         this.listener = listener;
 
@@ -154,6 +157,26 @@ public final class ProductAdapter
         boolean isAvailable =
                 product.getStockQuantity() > 0;
 
+        holder.buttonReviewProduct
+                .setContentDescription(
+                        context.getString(
+                                R.string.review_product_accessibility,
+                                product.getProductName()
+                        )
+                );
+
+        holder.buttonReviewProduct.setOnClickListener(
+                view -> {
+
+                    if (listener != null) {
+
+                        listener.onReviewProduct(
+                                product
+                        );
+                    }
+                }
+        );
+
         holder.buttonAddToCart.setEnabled(
                 isAvailable
         );
@@ -228,6 +251,7 @@ public final class ProductAdapter
         private final TextView textViewProductPrice;
         private final TextView textViewProductStock;
         private final TextView textViewProductRating;
+        private final MaterialButton buttonReviewProduct;
         private final MaterialButton buttonAddToCart;
 
         private ProductViewHolder(
@@ -273,6 +297,11 @@ public final class ProductAdapter
             buttonAddToCart =
                     itemView.findViewById(
                             R.id.buttonAddToCart
+                    );
+
+            buttonReviewProduct =
+                    itemView.findViewById(
+                            R.id.buttonReviewProduct
                     );
         }
     }

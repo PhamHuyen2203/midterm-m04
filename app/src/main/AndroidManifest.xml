@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MCommerceMobile04">
         <activity
+            android:name=".ReviewActivity"
+            android:exported="false" />
+        <activity
             android:name=".CheckoutActivity"
             android:exported="false" />
         <activity

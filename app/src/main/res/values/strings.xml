@@ -297,5 +297,72 @@
     <string name="button_continue_shopping">
     Tiếp tục mua sắm
 </string>
+    <!-- Đánh giá sản phẩm -->
+    <string name="button_review_product">Đánh giá</string>
+    <string name="review_title">Đánh giá sản phẩm</string>
+
+    <string name="review_subtitle">
+    Chia sẻ trải nghiệm của bạn để giúp những khách hàng khác lựa chọn sản phẩm phù hợp.
+</string>
+
+    <string name="review_product_heading">Sản phẩm</string>
+    <string name="review_rating_heading">Mức độ hài lòng</string>
+    <string name="review_comment_heading">Bình luận của bạn</string>
+
+    <string name="review_current_rating_format">
+    Điểm hiện tại: %1$.1f/5 (%2$d lượt đánh giá)
+</string>
+
+    <string name="review_rating_instruction">
+    Chạm vào ngôi sao để chọn từ 1 đến 5 điểm.
+</string>
+
+    <string name="review_comment_hint">
+    Nhập nhận xét về chất lượng sản phẩm, trải nghiệm sử dụng…
+</string>
+
+    <string name="review_security_note">
+    Mỗi khách hàng chỉ có thể gửi một đánh giá cho mỗi sản phẩm.
+</string>
+
+    <string name="button_submit_review">Gửi đánh giá</string>
+
+    <!-- Kiểm tra dữ liệu đánh giá -->
+    <string name="review_rating_required">
+    Vui lòng chọn số sao đánh giá.
+</string>
+
+    <string name="review_comment_required">
+    Vui lòng nhập bình luận.
+</string>
+
+    <string name="review_comment_too_long">
+    Bình luận không được vượt quá 500 ký tự.
+</string>
+
+    <!-- Kết quả gửi đánh giá -->
+    <string name="review_insert_success">
+    Đã gửi đánh giá. Điểm trung bình mới là %1$.1f/5.
+</string>
+
+    <string name="review_already_exists">
+    Bạn đã đánh giá sản phẩm này trước đó.
+</string>
+
+    <string name="review_invalid_session">
+    Phiên đăng nhập không hợp lệ. Vui lòng đăng nhập lại.
+</string>
+
+    <string name="review_product_unavailable">
+    Sản phẩm không tồn tại hoặc đã ngừng kinh doanh.
+</string>
+
+    <string name="review_submit_error">
+    Không thể gửi đánh giá. Vui lòng thử lại.
+</string>
+
+    <string name="review_product_accessibility">
+    Đánh giá sản phẩm %1$s
+</string>
 
 </resources>

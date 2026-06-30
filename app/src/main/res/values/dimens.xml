@@ -40,4 +40,7 @@
     <dimen name="mc_product_initial_text">24sp</dimen>
     <dimen name="mc_product_item_padding">16dp</dimen>
 
+    <dimen name="mc_review_comment_min_height">120dp</dimen>
+    <dimen name="mc_action_button_spacing">8dp</dimen>
+    <dimen name="mc_rating_error_margin">6dp</dimen>
 </resources>

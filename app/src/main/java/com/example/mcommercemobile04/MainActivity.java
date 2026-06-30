@@ -1,5 +1,6 @@
 package com.example.mcommercemobile04;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
@@ -34,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
 
     private TextView textViewDatabaseStatus;
     private Button buttonCheckDatabase;
+    private Button buttonOpenLogin;
 
     /*
      * Giữ kết nối mở trong lúc Activity tồn tại
@@ -69,6 +71,11 @@ public class MainActivity extends AppCompatActivity {
                 findViewById(
                         R.id.buttonCheckDatabase
                 );
+
+        buttonOpenLogin =
+                findViewById(
+                        R.id.buttonOpenLogin
+                );
     }
 
     /**
@@ -78,6 +85,13 @@ public class MainActivity extends AppCompatActivity {
 
         buttonCheckDatabase.setOnClickListener(
                 view -> openAndCheckDatabase()
+        );
+
+        buttonOpenLogin.setOnClickListener(
+                view -> {
+                    Intent intent = new Intent(this, LoginActivity.class);
+                    startActivity(intent);
+                }
         );
     }
 

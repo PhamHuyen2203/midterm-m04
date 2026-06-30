@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/mc_background"
+    android:fillViewport="true"
+    tools:context=".LoginActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="@dimen/mc_screen_padding"
+        android:paddingTop="@dimen/mc_spacing_xl"
+        android:paddingEnd="@dimen/mc_screen_padding"
+        android:paddingBottom="@dimen/mc_spacing_xl">
+
+        <TextView
+            android:id="@+id/textViewLoginAppName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/app_name"
+            android:textColor="@color/mc_primary"
+            android:textSize="@dimen/mc_text_title"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textViewLoginTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/mc_spacing_lg"
+            android:gravity="center"
+            android:text="@string/q2_title"
+            android:textColor="@color/mc_text_primary"
+            android:textSize="@dimen/mc_text_heading"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textViewLoginDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/mc_spacing_sm"
+            android:gravity="center"
+            android:lineSpacingExtra="@dimen/mc_spacing_xs"
+            android:text="@string/login_description"
+            android:textColor="@color/mc_text_secondary"
+            android:textSize="@dimen/mc_text_body" />
+
+        <TextView
+            android:id="@+id/textViewUsernameLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/mc_spacing_xl"
+            android:text="@string/label_username"
+            android:textColor="@color/mc_text_primary"
+            android:textSize="@dimen/mc_text_body"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/editTextUsername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="@dimen/mc_input_min_height"
+            android:autofillHints="username"
+            android:backgroundTint="@color/mc_primary"
+            android:hint="@string/hint_username"
+            android:imeOptions="actionNext"
+            android:inputType="text"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textColor="@color/mc_text_primary"
+            android:textColorHint="@color/mc_text_secondary"
+            android:textSize="@dimen/mc_text_body" />
+
+        <TextView
+            android:id="@+id/textViewPasswordLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/mc_spacing_md"
+            android:text="@string/label_password"
+            android:textColor="@color/mc_text_primary"
+            android:textSize="@dimen/mc_text_body"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/editTextPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="@dimen/mc_input_min_height"
+            android:autofillHints="password"
+            android:backgroundTint="@color/mc_primary"
+            android:hint="@string/hint_password"
+            android:imeOptions="actionDone"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textColor="@color/mc_text_primary"
+            android:textColorHint="@color/mc_text_secondary"
+            android:textSize="@dimen/mc_text_body" />
+
+        <Button
+            android:id="@+id/buttonLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/mc_spacing_lg"
+            android:minHeight="@dimen/mc_button_height"
+            android:backgroundTint="@color/mc_primary"
+            android:text="@string/button_login"
+            android:textColor="@color/mc_text_on_primary"
+            android:textSize="@dimen/mc_text_body"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textViewTestAccountHeading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/mc_spacing_xl"
+            android:text="@string/login_test_account_heading"
+            android:textColor="@color/mc_text_primary"
+            android:textSize="@dimen/mc_text_body"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textViewTestAccountDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/mc_spacing_sm"
+            android:lineSpacingExtra="@dimen/mc_spacing_xs"
+            android:text="@string/login_test_account_description"
+            android:textColor="@color/mc_text_secondary"
+            android:textSize="@dimen/mc_text_caption" />
+
+    </LinearLayout>
+
+</ScrollView>

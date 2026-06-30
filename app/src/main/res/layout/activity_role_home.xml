@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/mc_background"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="@dimen/mc_screen_padding">
+
+    <TextView
+        android:id="@+id/textViewHomeTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="@color/mc_primary"
+        android:textSize="@dimen/mc_text_title"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textViewWelcome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/mc_spacing_lg"
+        android:gravity="center"
+        android:textColor="@color/mc_text_primary"
+        android:textSize="@dimen/mc_text_heading"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textViewRoleDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/mc_spacing_sm"
+        android:gravity="center"
+        android:textColor="@color/mc_text_secondary"
+        android:textSize="@dimen/mc_text_body" />
+
+    <Button
+        android:id="@+id/buttonLogout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/mc_spacing_xl"
+        android:minHeight="@dimen/mc_button_height"
+        android:backgroundTint="@color/mc_error"
+        android:text="@string/button_logout"
+        android:textColor="@color/mc_text_on_primary" />
+
+</LinearLayout>

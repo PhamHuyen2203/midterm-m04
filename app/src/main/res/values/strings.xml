@@ -3,7 +3,9 @@
 
     <string name="app_name">M-Commerce Mobile 04</string>
 
-    <!-- Câu 1 -->
+    <!-- ================================================== -->
+    <!-- Câu 1: Thiết kế cơ sở dữ liệu SQLite -->
+    <!-- ================================================== -->
     <string name="q1_title">Câu 1 - Thiết kế cơ sở dữ liệu SQLite</string>
 
     <string name="q1_description">
@@ -31,5 +33,96 @@
     <string name="database_check_failed">
         Không thể mở cơ sở dữ liệu. Hãy kiểm tra file MCommerce.sqlite trong thư mục assets.
     </string>
+
+    <!-- ================================================== -->
+    <!-- Câu 2: Đăng nhập và khóa tài khoản -->
+    <!-- ================================================== -->
+
+    <string name="q2_title">
+    Câu 2 - Đăng nhập và khóa tài khoản
+</string>
+
+    <string name="login_description">
+    Đăng nhập bằng tài khoản khách hàng hoặc quản trị viên.
+    Tài khoản sẽ bị khóa sau 3 lần nhập sai mật khẩu liên tiếp.
+</string>
+
+    <string name="label_username">Tên đăng nhập</string>
+    <string name="label_password">Mật khẩu</string>
+
+    <string name="hint_username">Nhập tên đăng nhập</string>
+    <string name="hint_password">Nhập mật khẩu</string>
+
+    <string name="button_login">Đăng nhập</string>
+    <string name="button_open_login">Đi đến màn hình đăng nhập</string>
+    <string name="button_logout">Đăng xuất</string>
+
+    <string name="login_username_required">
+    Vui lòng nhập tên đăng nhập.
+</string>
+
+    <string name="login_password_required">
+    Vui lòng nhập mật khẩu.
+</string>
+
+    <string name="login_invalid_credentials">
+    Tên đăng nhập hoặc mật khẩu không đúng.
+</string>
+
+    <string name="login_wrong_password_remaining">
+    Mật khẩu không đúng. Bạn còn %1$d lần thử.
+</string>
+
+    <string name="login_account_locked">
+    Tài khoản đã bị khóa do đăng nhập sai 3 lần liên tiếp.
+</string>
+
+    <string name="login_database_error">
+    Không thể kiểm tra tài khoản. Vui lòng kiểm tra cơ sở dữ liệu.
+</string>
+
+    <string name="login_invalid_role">
+    Tài khoản có vai trò không hợp lệ.
+</string>
+
+    <string name="login_success_admin">
+    Đăng nhập quản trị viên thành công. Xin chào %1$s.
+</string>
+
+    <string name="login_success_customer">
+    Đăng nhập khách hàng thành công. Xin chào %1$s.
+</string>
+
+    <string name="login_test_account_heading">
+    Tài khoản kiểm thử
+</string>
+
+    <string name="login_test_account_description">
+    Admin: admin / 123456\nKhách hàng: customer1 / 123456
+</string>
+
+    <string name="admin_home_title">
+    Trang quản trị
+</string>
+
+    <string name="customer_home_title">
+    Trang khách hàng
+</string>
+
+    <string name="home_welcome">
+    Xin chào, %1$s
+</string>
+
+    <string name="home_role_admin">
+    Bạn đang đăng nhập với quyền quản trị viên.
+</string>
+
+    <string name="home_role_customer">
+    Bạn đang đăng nhập với quyền khách hàng.
+</string>
+
+    <string name="logout_success">
+    Đã đăng xuất khỏi hệ thống.
+</string>
 
 </resources>

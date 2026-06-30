@@ -72,6 +72,16 @@
             android:text="@string/button_check_database"
             android:textColor="@color/mc_text_on_primary" />
 
+        <Button
+            android:id="@+id/buttonOpenLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/mc_spacing_md"
+            android:minHeight="@dimen/mc_button_height"
+            android:backgroundTint="@color/mc_secondary"
+            android:text="@string/button_open_login"
+            android:textColor="@color/mc_text_on_primary" />
+
     </LinearLayout>
 
 </ScrollView>

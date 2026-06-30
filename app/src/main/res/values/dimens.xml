@@ -17,4 +17,7 @@
     <dimen name="mc_button_height">50dp</dimen>
     <dimen name="mc_corner_radius">12dp</dimen>
 
+    <dimen name="mc_input_min_height">56dp</dimen>
+    <dimen name="mc_content_max_width">520dp</dimen>
+
 </resources>

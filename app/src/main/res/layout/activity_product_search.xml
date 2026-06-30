@@ -182,13 +182,6 @@
             android:textSize="@dimen/mc_text_body"
             android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/textViewCartSummary"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/mc_primary"
-            android:textSize="@dimen/mc_text_caption"
-            android:textStyle="bold" />
 
     </LinearLayout>
 
@@ -227,5 +220,50 @@
             android:visibility="gone" />
 
     </FrameLayout>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/mc_screen_padding"
+        android:layout_marginTop="@dimen/mc_spacing_sm"
+        android:layout_marginEnd="@dimen/mc_screen_padding"
+        android:layout_marginBottom="@dimen/mc_spacing_md"
+        app:cardBackgroundColor="@color/mc_surface"
+        app:cardCornerRadius="@dimen/mc_corner_radius"
+        app:cardElevation="@dimen/mc_card_elevation"
+        app:strokeColor="@color/mc_border"
+        app:strokeWidth="@dimen/mc_stroke_width">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="@dimen/mc_spacing_md">
+
+            <TextView
+                android:id="@+id/textViewCartSummary"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/mc_text_primary"
+                android:textSize="@dimen/mc_text_body"
+                android:textStyle="bold" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonCheckout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/mc_spacing_md"
+                android:minHeight="@dimen/mc_button_height"
+                android:text="@string/button_checkout"
+                android:textColor="@color/mc_text_on_primary"
+                android:textStyle="bold"
+                app:backgroundTint="@color/mc_primary"
+                app:cornerRadius="@dimen/mc_corner_radius" />
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
 
 </LinearLayout>

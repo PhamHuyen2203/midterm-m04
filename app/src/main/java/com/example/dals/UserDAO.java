@@ -5,6 +5,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.example.models.LoginResult;
+import com.example.models.CheckoutAccessResult;
 
 import java.io.IOException;
 
@@ -143,6 +144,127 @@ public final class UserDAO {
             if (cursor != null) {
                 cursor.close();
             }
+
+            if (database != null
+                    && database.isOpen()) {
+
+                database.close();
+            }
+        }
+    }
+
+    /**
+     * Kiểm tra khách hàng có được phép Checkout hay không.
+     *
+     * Không chỉ tin vào SessionManager mà phải đọc lại
+     * trạng thái mới nhất từ bảng User trong SQLite.
+     */
+    public static CheckoutAccessResult checkCheckoutAccess(
+            Context context,
+            int userId
+    ) throws IOException {
+
+        if (userId <= 0) {
+
+            return CheckoutAccessResult.userNotFound();
+        }
+
+        SQLiteDatabase database = null;
+
+        try {
+            database =
+                    DatabaseHelper.openDatabase(context);
+
+            String selectSql =
+                    "SELECT " +
+                            "Role, " +
+                            "FailedLoginCount, " +
+                            "IsLocked " +
+                            "FROM \"User\" " +
+                            "WHERE UserID = ? " +
+                            "LIMIT 1";
+
+            String role;
+            int failedLoginCount;
+            int isLocked;
+
+            try (
+                    Cursor cursor =
+                            database.rawQuery(
+                                    selectSql,
+                                    new String[]{
+                                            String.valueOf(userId)
+                                    }
+                            )
+            ) {
+
+                /*
+                 * Session đang lưu UserID nhưng người dùng
+                 * không còn tồn tại trong database.
+                 */
+                if (!cursor.moveToFirst()) {
+
+                    return CheckoutAccessResult
+                            .userNotFound();
+                }
+
+                role =
+                        cursor.getString(
+                                cursor.getColumnIndexOrThrow(
+                                        "Role"
+                                )
+                        );
+
+                failedLoginCount =
+                        cursor.getInt(
+                                cursor.getColumnIndexOrThrow(
+                                        "FailedLoginCount"
+                                )
+                        );
+
+                isLocked =
+                        cursor.getInt(
+                                cursor.getColumnIndexOrThrow(
+                                        "IsLocked"
+                                )
+                        );
+            }
+
+            /*
+             * Chỉ Customer được sử dụng Checkout.
+             */
+            if (!"CUSTOMER".equalsIgnoreCase(role)) {
+
+                return CheckoutAccessResult.invalidRole();
+            }
+
+            /*
+             * Từ chối nếu:
+             * - IsLocked đã bằng 1; hoặc
+             * - FailedLoginCount đã đạt 3 nhưng dữ liệu
+             *   IsLocked chưa đồng bộ.
+             */
+            if (isLocked == 1
+                    || failedLoginCount
+                    >= MAX_FAILED_LOGIN_ATTEMPTS) {
+
+                /*
+                 * Chuẩn hóa dữ liệu bằng UPDATE trực tiếp:
+                 * FailedLoginCount ít nhất bằng 3,
+                 * IsLocked chắc chắn bằng 1.
+                 */
+                lockAccount(
+                        database,
+                        userId
+                );
+
+                return CheckoutAccessResult
+                        .accountLocked();
+            }
+
+            return CheckoutAccessResult.allowed();
+
+        } finally {
 
             if (database != null
                     && database.isOpen()) {

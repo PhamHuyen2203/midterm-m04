@@ -221,5 +221,81 @@
     <string name="navigation_back">
     Quay lại
 </string>
+    <string name="button_checkout">Thanh toán</string>
+
+    <string name="checkout_login_required">
+    Vui lòng đăng nhập để tiếp tục thanh toán.
+</string>
+
+    <string name="checkout_access_checking">
+    Đang kiểm tra trạng thái tài khoản…
+</string>
+
+    <string name="checkout_access_error">
+    Không thể kiểm tra quyền thanh toán. Vui lòng thử lại.
+</string>
+
+    <string name="checkout_invalid_session">
+    Phiên đăng nhập không còn hợp lệ. Vui lòng đăng nhập lại.
+</string>
+
+    <string name="checkout_locked_title">
+    Không thể tiếp tục thanh toán
+</string>
+
+    <string name="checkout_locked_message">
+    Tài khoản đã bị khóa do đăng nhập sai 3 lần liên tiếp.
+    Bạn không được phép tiếp tục thanh toán.
+</string>
+
+    <string name="checkout_locked_action">
+    Đến trang đăng nhập
+</string>
+
+    <!-- Màn hình Checkout -->
+    <string name="checkout_title">Thanh toán</string>
+
+    <string name="checkout_subtitle">
+    Kiểm tra thông tin giỏ hàng trước khi tiếp tục đặt hàng.
+</string>
+
+    <string name="checkout_verified_title">
+    Tài khoản đã được xác thực
+</string>
+
+    <string name="checkout_verified_description">
+    Tài khoản của bạn đang hoạt động và đủ điều kiện thanh toán.
+</string>
+
+    <string name="checkout_customer_heading">
+    Người mua
+</string>
+
+    <string name="checkout_summary_heading">
+    Tóm tắt giỏ hàng
+</string>
+
+    <string name="checkout_product_lines_format">
+    Số loại sản phẩm: %1$d
+</string>
+
+    <string name="checkout_total_quantity_format">
+    Tổng số lượng: %1$d
+</string>
+
+    <string name="checkout_total_amount_format">
+    Tạm tính: %1$s
+</string>
+
+    <string name="checkout_empty_cart">
+    Giỏ hàng hiện chưa có sản phẩm.
+</string>
+
+    <string name="checkout_load_error">
+    Không thể tải thông tin giỏ hàng.
+</string>
+    <string name="button_continue_shopping">
+    Tiếp tục mua sắm
+</string>
 
 </resources>

@@ -6,6 +6,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteStatement;
 
 import com.example.models.CartActionResult;
+import com.example.models.CartSummary;
 
 import java.io.IOException;
 
@@ -305,6 +306,102 @@ public final class CartDAO {
                             )
                     )
             );
+        }
+    }
+
+    /**
+     * Lấy thông tin tóm tắt của giỏ hàng ACTIVE.
+     */
+    public static CartSummary getCartSummary(
+            Context context,
+            int userId
+    ) throws IOException {
+
+        if (userId <= 0) {
+            return CartSummary.empty();
+        }
+
+        SQLiteDatabase database = null;
+
+        try {
+            database =
+                    DatabaseHelper.openDatabase(context);
+
+            String sql =
+                    "SELECT " +
+                            "COUNT(*) AS ProductLineCount, " +
+
+                            "COALESCE(" +
+                            "SUM(Quantity), " +
+                            "0" +
+                            ") AS TotalQuantity, " +
+
+                            "COALESCE(" +
+                            "SUM(Quantity * UnitPrice), " +
+                            "0" +
+                            ") AS TotalAmount " +
+
+                            "FROM CartItem " +
+
+                            "WHERE CartID = (" +
+                            "SELECT CartID " +
+                            "FROM Cart " +
+                            "WHERE UserID = ? " +
+                            "AND Status = 'ACTIVE' " +
+                            "ORDER BY CartID DESC " +
+                            "LIMIT 1" +
+                            ")";
+
+            try (
+                    Cursor cursor =
+                            database.rawQuery(
+                                    sql,
+                                    new String[]{
+                                            String.valueOf(userId)
+                                    }
+                            )
+            ) {
+
+                if (!cursor.moveToFirst()) {
+
+                    return CartSummary.empty();
+                }
+
+                int productLineCount =
+                        cursor.getInt(
+                                cursor.getColumnIndexOrThrow(
+                                        "ProductLineCount"
+                                )
+                        );
+
+                int totalQuantity =
+                        cursor.getInt(
+                                cursor.getColumnIndexOrThrow(
+                                        "TotalQuantity"
+                                )
+                        );
+
+                double totalAmount =
+                        cursor.getDouble(
+                                cursor.getColumnIndexOrThrow(
+                                        "TotalAmount"
+                                )
+                        );
+
+                return new CartSummary(
+                        productLineCount,
+                        totalQuantity,
+                        totalAmount
+                );
+            }
+
+        } finally {
+
+            if (database != null
+                    && database.isOpen()) {
+
+                database.close();
+            }
         }
     }
 

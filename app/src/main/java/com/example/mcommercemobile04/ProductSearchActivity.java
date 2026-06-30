@@ -8,11 +8,15 @@ import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.dals.UserDAO;
+import com.example.models.CheckoutAccessResult;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.example.adapters.ProductAdapter;
 import com.example.dals.CartDAO;
 import com.example.dals.ProductDAO;
@@ -60,7 +64,7 @@ public class ProductSearchActivity
 
     private MaterialButton
             buttonClearProductFilter;
-
+    private MaterialButton buttonCheckout;
     private TextView
             textViewProductResultCount;
 
@@ -80,6 +84,7 @@ public class ProductSearchActivity
             productAdapter;
 
     private boolean cartOperationRunning;
+    private boolean checkoutAccessChecking;
 
     private final ExecutorService executorService =
             Executors.newSingleThreadExecutor();
@@ -161,6 +166,11 @@ public class ProductSearchActivity
                         R.id.buttonClearProductFilter
                 );
 
+        buttonCheckout =
+                findViewById(
+                        R.id.buttonCheckout
+                );
+
         textViewProductResultCount =
                 findViewById(
                         R.id.textViewProductResultCount
@@ -225,6 +235,10 @@ public class ProductSearchActivity
 
         buttonClearProductFilter.setOnClickListener(
                 view -> clearFilters()
+        );
+
+        buttonCheckout.setOnClickListener(
+                view -> handleCheckoutClick()
         );
 
         editTextMaxPrice.setOnEditorActionListener(
@@ -623,6 +637,156 @@ public class ProductSearchActivity
         buttonClearProductFilter.setEnabled(
                 !isLoading
         );
+    }
+    /**
+     * Xử lý khi khách hàng nhấn nút Thanh toán.
+     */
+    private void handleCheckoutClick() {
+
+        /*
+         * Bước 1:
+         * Kiểm tra phiên đăng nhập trước.
+         */
+        if (!SessionManager.isLoggedIn(this)
+                || !SessionManager.isCustomer(this)
+                || SessionManager.getUserId(this) <= 0) {
+
+            Toast.makeText(
+                    this,
+                    R.string.checkout_login_required,
+                    Toast.LENGTH_LONG
+            ).show();
+
+            openLoginScreen();
+            return;
+        }
+
+        if (checkoutAccessChecking) {
+            return;
+        }
+
+        checkoutAccessChecking = true;
+        buttonCheckout.setEnabled(false);
+
+        int userId =
+                SessionManager.getUserId(this);
+
+        /*
+         * Bước 2:
+         * Đọc lại trạng thái tài khoản từ SQLite.
+         */
+        executorService.execute(() -> {
+
+            try {
+                CheckoutAccessResult result =
+                        UserDAO.checkCheckoutAccess(
+                                getApplicationContext(),
+                                userId
+                        );
+
+                runOnUiThread(() -> {
+
+                    checkoutAccessChecking = false;
+                    buttonCheckout.setEnabled(true);
+
+                    handleCheckoutAccessResult(result);
+                });
+
+            } catch (Exception exception) {
+
+                Log.e(
+                        LOG_TAG,
+                        "Unable to check checkout access.",
+                        exception
+                );
+
+                runOnUiThread(() -> {
+
+                    checkoutAccessChecking = false;
+                    buttonCheckout.setEnabled(true);
+
+                    Snackbar.make(
+                            rootProductSearch,
+                            R.string.checkout_access_error,
+                            Snackbar.LENGTH_LONG
+                    ).show();
+                });
+            }
+        });
+    }
+
+    /**
+     * Xử lý kết quả kiểm tra quyền Checkout.
+     */
+    private void handleCheckoutAccessResult(
+            CheckoutAccessResult result
+    ) {
+
+        switch (result.getStatus()) {
+
+            case ALLOWED:
+                openCheckoutScreen();
+                break;
+
+            case ACCOUNT_LOCKED:
+
+                /*
+                 * Không giữ phiên của tài khoản đã khóa.
+                 */
+                SessionManager.clearSession(this);
+
+                showLockedAccountDialog();
+                break;
+
+            case USER_NOT_FOUND:
+            case INVALID_ROLE:
+
+                SessionManager.clearSession(this);
+
+                Toast.makeText(
+                        this,
+                        R.string.checkout_invalid_session,
+                        Toast.LENGTH_LONG
+                ).show();
+
+                openLoginScreen();
+                break;
+        }
+    }
+
+    /**
+     * Hiển thị thông báo chặn khi tài khoản bị khóa.
+     */
+    private void showLockedAccountDialog() {
+
+        new MaterialAlertDialogBuilder(this)
+                .setTitle(
+                        R.string.checkout_locked_title
+                )
+                .setMessage(
+                        R.string.checkout_locked_message
+                )
+                .setCancelable(false)
+                .setPositiveButton(
+                        R.string.checkout_locked_action,
+                        (dialog, which) ->
+                                openLoginScreen()
+                )
+                .show();
+    }
+
+    /**
+     * Chuyển đến màn hình Checkout khi tài khoản hợp lệ.
+     */
+    private void openCheckoutScreen() {
+
+        Intent intent =
+                new Intent(
+                        this,
+                        CheckoutActivity.class
+                );
+
+        startActivity(intent);
     }
 
     private Double parseOptionalPrice(

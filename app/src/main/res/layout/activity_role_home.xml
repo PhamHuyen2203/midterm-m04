@@ -122,6 +122,22 @@
             app:cornerRadius="@dimen/mc_corner_radius" />
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonMyProfile"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/mc_spacing_md"
+            android:minHeight="@dimen/mc_button_height"
+            android:text="@string/button_my_profile"
+            android:textColor="@color/mc_primary"
+            android:textSize="@dimen/mc_text_body"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:cornerRadius="@dimen/mc_corner_radius"
+            app:strokeColor="@color/mc_primary"
+            app:strokeWidth="@dimen/mc_stroke_width" />
+
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/buttonLogout"
             style="@style/Widget.Material3.Button.OutlinedButton"
             android:layout_width="match_parent"

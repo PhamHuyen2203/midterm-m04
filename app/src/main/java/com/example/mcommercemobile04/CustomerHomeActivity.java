@@ -19,6 +19,7 @@ public class CustomerHomeActivity
     private TextView textViewRoleDescription;
 
     private Button buttonBrowseProducts;
+    private Button buttonMyProfile;
     private Button buttonLogout;
 
     @Override
@@ -65,12 +66,21 @@ public class CustomerHomeActivity
                         R.id.buttonBrowseProducts
                 );
 
+        buttonMyProfile =
+                findViewById(
+                        R.id.buttonMyProfile
+                );
+
         buttonLogout =
                 findViewById(
                         R.id.buttonLogout
                 );
 
         buttonBrowseProducts.setVisibility(
+                View.VISIBLE
+        );
+
+        buttonMyProfile.setVisibility(
                 View.VISIBLE
         );
     }
@@ -99,6 +109,10 @@ public class CustomerHomeActivity
                 view -> openProductScreen()
         );
 
+        buttonMyProfile.setOnClickListener(
+                view -> openProfileScreen()
+        );
+
         buttonLogout.setOnClickListener(
                 view -> logout()
         );
@@ -110,6 +124,17 @@ public class CustomerHomeActivity
                 new Intent(
                         this,
                         ProductSearchActivity.class
+                );
+
+        startActivity(intent);
+    }
+
+    private void openProfileScreen() {
+
+        Intent intent =
+                new Intent(
+                        this,
+                        MyProfileActivity.class
                 );
 
         startActivity(intent);

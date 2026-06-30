@@ -364,5 +364,74 @@
     <string name="review_product_accessibility">
     Đánh giá sản phẩm %1$s
 </string>
+    <string name="button_my_profile">Hồ sơ của tôi</string>
+
+    <string name="my_profile_title">Hồ sơ của tôi</string>
+
+    <string name="my_profile_subtitle">
+    Theo dõi hoạt động mua sắm và những đánh giá bạn đã chia sẻ.
+</string>
+
+    <string name="profile_customer_label">Khách hàng</string>
+
+    <string name="profile_statistics_heading">
+    Thống kê mua hàng
+</string>
+
+    <string name="profile_total_orders_label">
+    Tổng đơn hàng
+</string>
+
+    <string name="profile_total_orders_description">
+    Tất cả đơn hàng đã đặt
+</string>
+
+    <string name="profile_delivered_orders_label">
+    Đã giao thành công
+</string>
+
+    <string name="profile_delivered_orders_description">
+    Đơn hàng có trạng thái đã giao
+</string>
+
+    <string name="profile_total_spent_label">
+    Tổng tiền đã chi
+</string>
+
+    <string name="profile_total_spent_description">
+    Giá trị các đơn hàng đã giao thành công
+</string>
+
+    <string name="profile_order_count_format">%1$d</string>
+
+    <string name="profile_money_format">%1$s</string>
+
+    <string name="word_cloud_title">
+    Từ khóa trong đánh giá
+</string>
+
+    <string name="word_cloud_subtitle">
+    Những từ xuất hiện nổi bật trong các bình luận sản phẩm của bạn.
+</string>
+
+    <string name="word_cloud_comment_count">
+    Dữ liệu được tổng hợp từ %1$d bình luận.
+</string>
+
+    <string name="word_cloud_empty">
+    Bạn chưa có bình luận nào để tạo WordCloud.
+</string>
+
+    <string name="word_cloud_accessibility">
+    Các từ khóa nổi bật trong bình luận: %1$s
+</string>
+
+    <string name="profile_load_error">
+    Không thể tải thông tin hồ sơ. Vui lòng thử lại.
+</string>
+
+    <string name="profile_invalid_session">
+    Phiên đăng nhập không còn hợp lệ. Vui lòng đăng nhập lại.
+</string>
 
 </resources>

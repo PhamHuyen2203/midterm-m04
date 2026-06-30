@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--
+        Những từ phổ biến nhưng không mang nhiều ý nghĩa
+        khi hiển thị trong WordCloud.
+    -->
+    <string-array name="word_cloud_stop_words">
+        <item>và</item>
+        <item>là</item>
+        <item>của</item>
+        <item>cho</item>
+        <item>tôi</item>
+        <item>mình</item>
+        <item>thì</item>
+        <item>một</item>
+        <item>những</item>
+        <item>các</item>
+        <item>này</item>
+        <item>đó</item>
+        <item>được</item>
+        <item>với</item>
+        <item>trong</item>
+        <item>khi</item>
+        <item>đã</item>
+        <item>có</item>
+        <item>không</item>
+        <item>nhưng</item>
+        <item>vẫn</item>
+        <item>nên</item>
+        <item>về</item>
+        <item>ở</item>
+        <item>trên</item>
+        <item>để</item>
+        <item>rất</item>
+        <item>khá</item>
+        <item>cũng</item>
+    </string-array>
+
+</resources>

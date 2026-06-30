@@ -38,4 +38,11 @@
     <color name="black">#000000</color>
     <color name="transparent">#00000000</color>
 
+    <!-- Màu WordCloud -->
+    <color name="mc_word_cloud_blue">#2563EB</color>
+    <color name="mc_word_cloud_indigo">#4F46E5</color>
+    <color name="mc_word_cloud_violet">#7C3AED</color>
+    <color name="mc_word_cloud_green">#15803D</color>
+    <color name="mc_word_cloud_orange">#C2410C</color>
+    <color name="mc_word_cloud_pink">#BE185D</color>
 </resources>
